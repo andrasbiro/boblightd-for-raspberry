@@ -37,6 +37,7 @@
 #define WS2801    12
 #define LIGHTPACK 13
 #define AMBIODER  14
+#define TPM2      15
 
 #include <string>
 #include <vector>

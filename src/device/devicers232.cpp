@@ -55,6 +55,14 @@ void CDeviceRS232::SetType(int type)
     m_prefix.push_back(0xA1);
     m_postfix.push_back(0xA5);
   }
+  else if (type == TPM2)
+  {
+    m_prefix.push_back(0xC9);
+    m_prefix.push_back(0xDA);
+    m_prefix.push_back((m_channels.size()>>8)&0xff);
+    m_prefix.push_back(m_channels.size()&0xff);
+    m_postfix.push_back(0x36);
+  }
 }
 
 void CDeviceRS232::Sync()
